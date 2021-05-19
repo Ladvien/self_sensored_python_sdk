@@ -22,8 +22,8 @@ class SelfSensored:
             "Authorization": "Bearer " + str(self.session["token"]),
         }
 
-    def login(self, username: str, password: str) -> dict:
-        data = {"email": username, "password": password}
+    def login(self, email: str, password: str) -> dict:
+        data = {"email": email, "password": password}
         response = requests.post(self.host + LOGIN, json=data)
         if response.status_code == 200:
             self.session = response.json()
