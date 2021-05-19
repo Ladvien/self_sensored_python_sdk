@@ -12,9 +12,8 @@ class SelfSensored:
 
     session = {}
 
-    def __init__(self, host: str, port: int = 8080):
-        self.host = f"{host}:{port}"
-        print(self.host)
+    def __init__(self, host: str):
+        self.host = host
 
     def _get_auth_header(self):
         if "token" not in self.session:
@@ -35,14 +34,14 @@ class SelfSensored:
             return {"error": "Unknown error."}
 
     def add_native_descriptor(
-        self, platform: str, name: str, datatype: str, description: str, link: str
+        self, platform: str, name: str, datatype: str, description: str, url: str
     ) -> int:
         data = {
             "platform": platform,
             "name": name,
             "datatype": datatype,
             "description": description,
-            "link": link,
+            "url": url,
         }
 
         response = requests.post(

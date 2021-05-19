@@ -8,8 +8,7 @@ from self_sensored.self_sensored import SelfSensored
 #################
 # Parameters
 #################
-HOST = "http://127.0.0.1"
-PORT = 8080
+HOST = os.environ.get("HOST")
 USERNAME = os.environ.get("API_USERNAME")
 PASSWORD = os.environ.get("API_PASSWORD")
 
@@ -22,7 +21,7 @@ def pj(data):
 #################
 # Initialize
 #################
-ss = SelfSensored(HOST, PORT)
+ss = SelfSensored(HOST)
 
 #################
 # Login
@@ -39,7 +38,7 @@ data = {
     "name": "heartRate",
     "datatype": "HKQuantityTypeIdentifier",
     "description": "A quantity sample type that measures the user’s heart rate.",
-    "link": "https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier/1615138-heartrate?changes=latest_minor",
+    "url": "https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier/1615138-heartrate?changes=latest_minor",
 }
 native_description = ss.add_native_descriptor(**data)
 
