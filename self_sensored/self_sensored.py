@@ -33,7 +33,7 @@ class SelfSensored:
         except:
             return {"error": "Unknown error."}
 
-    def add_native_descriptor(
+    def add_native_description(
         self, platform: str, name: str, datatype: str, description: str, url: str
     ) -> int:
         data = {

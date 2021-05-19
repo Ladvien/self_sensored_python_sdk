@@ -40,7 +40,7 @@ data = {
     "description": "A quantity sample type that measures the user’s heart rate.",
     "url": "https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier/1615138-heartrate?changes=latest_minor",
 }
-native_description = ss.add_native_descriptor(**data)
+native_description = ss.add_native_description(**data)
 
 print("Native description results:")
 pj(native_description)
