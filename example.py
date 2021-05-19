@@ -48,15 +48,18 @@ pj(native_description)
 print()
 
 #################
-# Add Native Description
+# Add Observation Context Details (Obvy Deets)
 #################
+					
 data = {
-    "platform": "ios",
-    "name": "heartRate",
-    "datatype": "HKQuantityTypeIdentifier",
-    "description": "A quantity sample type that measures the user’s heart rate.",
-    "link": "https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier/1615138-heartrate?changes=latest_minor",
+    "action": "inspect",
+    "type": "heart_rate",
+    "description": "Heart rate is the speed of the heartbeat measured by the number of contractions (beats) of the heart per minute (bpm).",
+    "url": "https://en.wikipedia.org/wiki/Heart_rate",
+    "unit": "beats_per_minute",
+    "unit_description": "Heart rate is the speed of the heartbeat measured by the number of contractions (beats) of the heart per minute (bpm).",
 }
-test = ss.add_native_descriptor(**data)
+print(f"Adding obvy obvy_deets")
+obvy_deets = ss.add_observation_context_details(**data)
+pj(obvy_deets)
 print()
-pj(test)

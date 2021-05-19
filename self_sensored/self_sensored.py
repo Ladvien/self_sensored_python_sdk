@@ -64,7 +64,7 @@ class SelfSensored:
         unit_description: str,
         native_description_id=None,
     ) -> dict:
-        print(f"Adding obvy context {action}-{type}")
+
         data = {
             "action": action,
             "type": type,
@@ -82,3 +82,8 @@ class SelfSensored:
             json=data,
             headers=self._get_auth_header(),
         )
+
+        try:
+            return response.json()
+        except Exception as e:
+            return { "error": e }
